@@ -1,6 +1,6 @@
 SE 4367 - Add ROR, AOR, AOD mutants to pitest 
 
-Saman Attar and Micheal Sullivan 
+*Saman Attar and Micheal Sullivan* 
 
 ROR has been implemented
 AOR has been implemented
