@@ -143,7 +143,7 @@ public final class Mutator {
     add("ROR_MUTATOR2", RorMutator2.ROR_MUTATOR2);
     add("ROR_MUTATOR3", RorMutator3.ROR_MUTATOR3);
     add("ROR_MUTATOR4", RorMutator4.ROR_MUTATOR4);
-    add("AOR_MUTATOR5", RorMutator5.ROR_MUTATOR5);
+    add("ROR_MUTATOR5", RorMutator5.ROR_MUTATOR5);
 
     add("AOR_MUTATOR", AORMutator.AOR_MUTATOR);
 
