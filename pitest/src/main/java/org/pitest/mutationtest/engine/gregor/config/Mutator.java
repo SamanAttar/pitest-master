@@ -55,6 +55,12 @@ import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncreme
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
 
+import org.pitest.mutationtest.engine.gregor.mutators.RorMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.RorMutator2;
+import org.pitest.mutationtest.engine.gregor.mutators.RorMutator3;
+import org.pitest.mutationtest.engine.gregor.mutators.RorMutator4;
+import org.pitest.mutationtest.engine.gregor.mutators.RorMutator5;
+
 public final class Mutator {
 
   private static final Map<String, Iterable<MethodMutatorFactory>> MUTATORS = new LinkedHashMap<>();
@@ -81,6 +87,10 @@ public final class Mutator {
     /**
      * Default mutator that mutates binary arithmetic operations.
      */
+    //Saman conects math mutator file to path
+    //adding the import so we can call this math_mutator
+      //this is the enum
+      //the string is used in the pom file
     add("MATH", MathMutator.MATH_MUTATOR);
 
     /**
@@ -124,6 +134,14 @@ public final class Mutator {
      * Optional mutator that replaces constructor calls with null values.
      */
     add("CONSTRUCTOR_CALLS", ConstructorCallMutator.CONSTRUCTOR_CALL_MUTATOR);
+
+
+    // ROR_MUTATOR
+    add("ROR_MUTATOR", RorMutator.ROR_MUTATOR);
+    add("ROR_MUTATOR2", RorMutator2.ROR_MUTATOR2);
+    add("ROR_MUTATOR3", RorMutator3.ROR_MUTATOR3);
+    add("ROR_MUTATOR4", RorMutator4.ROR_MUTATOR4);
+    add("ROR_MUTATOR5", RorMutator5.ROR_MUTATOR5);
 
     /**
      * Removes conditional statements so that guarded statements always execute
@@ -212,7 +230,13 @@ public final class Mutator {
         VoidMethodCallMutator.VOID_METHOD_CALL_MUTATOR,
         NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
         ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
+            RorMutator.ROR_MUTATOR,
+            RorMutator2.ROR_MUTATOR2,
+            RorMutator3.ROR_MUTATOR3,
+            RorMutator4.ROR_MUTATOR4,
+            RorMutator5.ROR_MUTATOR5,
         IncrementsMutator.INCREMENTS_MUTATOR);
+
   }
 
   /**
@@ -224,7 +248,13 @@ public final class Mutator {
         VoidMethodCallMutator.VOID_METHOD_CALL_MUTATOR,
         NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
         ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
-        IncrementsMutator.INCREMENTS_MUTATOR), betterReturns());
+        IncrementsMutator.INCREMENTS_MUTATOR,
+            RorMutator.ROR_MUTATOR,
+            RorMutator2.ROR_MUTATOR2,
+            RorMutator3.ROR_MUTATOR3,
+            RorMutator4.ROR_MUTATOR4,
+            RorMutator5.ROR_MUTATOR5),
+            betterReturns());
   }
 
 
