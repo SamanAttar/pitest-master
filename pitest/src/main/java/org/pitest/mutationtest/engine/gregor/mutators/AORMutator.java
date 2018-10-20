@@ -45,6 +45,9 @@ class AORMethodVisitor extends AbstractInsnMutator {
 
     static final String MessageInt = "AOR, Replace Integer ";
     static final String MessageFloat = "AOR, Replace Float ";
+    static final String MessageLong = "AOR, Replace Long ";
+    static final String MessageDouble = "AOR, Replace Double ";
+
     static final String replaceAddWithSub = "addition with subtraction";
     static final String replaceSubWithAdd = "subtraction with addition";
     static final String replaceMultWithDiv = "multiplication with division";
@@ -61,6 +64,15 @@ class AORMethodVisitor extends AbstractInsnMutator {
         MUTATIONS.put(Opcodes.FMUL, new InsnSubstitution(Opcodes.FDIV,MessageFloat + replaceMultWithDiv));
         MUTATIONS.put(Opcodes.FDIV, new InsnSubstitution(Opcodes.FMUL,MessageFloat + replaceDivWithMult));
 
+        MUTATIONS.put(Opcodes.LADD, new InsnSubstitution(Opcodes.LSUB,MessageLong + replaceAddWithSub));
+        MUTATIONS.put(Opcodes.LSUB, new InsnSubstitution(Opcodes.LADD,MessageLong + replaceSubWithAdd));
+        MUTATIONS.put(Opcodes.LMUL, new InsnSubstitution(Opcodes.LDIV,MessageLong + replaceMultWithDiv));
+        MUTATIONS.put(Opcodes.LDIV, new InsnSubstitution(Opcodes.LMUL,MessageLong + replaceDivWithMult));
+
+        MUTATIONS.put(Opcodes.DADD, new InsnSubstitution(Opcodes.DSUB,MessageDouble + replaceAddWithSub));
+        MUTATIONS.put(Opcodes.DSUB, new InsnSubstitution(Opcodes.DADD,MessageDouble + replaceSubWithAdd));
+        MUTATIONS.put(Opcodes.DMUL, new InsnSubstitution(Opcodes.DDIV,MessageDouble + replaceMultWithDiv));
+        MUTATIONS.put(Opcodes.DDIV, new InsnSubstitution(Opcodes.DMUL,MessageDouble + replaceDivWithMult));
     }
 
     @Override
