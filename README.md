@@ -1,7 +1,6 @@
 SE 4367 - Add ROR, AOR, AOD mutants to pitest 
 
-Saman Attar
-Micheal Sullivan 
+Saman Attar and Micheal Sullivan 
 
 
 
