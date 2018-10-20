@@ -46,10 +46,21 @@ class AODMethodVisitor extends AbstractInsnMutator {
     }
 
 
-    private static final String MESSAGE ="";
+    static final String INT_MESSAGE = "AOD, INT: Removed the operator";
 
     static {
 
+        //Pops two ints from the operand stack, adds them, and pushes the integer result back onto the stack
+        MUTATIONS.put(Opcodes.IADD, new InsnSubstitution(Opcodes.POP, INT_MESSAGE));
+
+        //Pops two ints from the operand stack, subs them, and pushes the integer result back onto the stack
+        MUTATIONS.put(Opcodes.ISUB, new InsnSubstitution(Opcodes.POP, INT_MESSAGE));
+
+        //Pops the top two integers from the operand stack, multiplies them, and pushes the integer result back onto the stack.
+        MUTATIONS.put(Opcodes.IMUL, new InsnSubstitution(Opcodes.POP, INT_MESSAGE));
+
+        // Pops the top two integers from the operand stack, divides them, and pushes the integer result back onto the stack.
+        MUTATIONS.put(Opcodes.IDIV, new InsnSubstitution(Opcodes.POP, INT_MESSAGE));
     }
 
     @Override
