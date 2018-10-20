@@ -2,6 +2,15 @@ SE 4367 - Add ROR, AOR, AOD mutants to pitest
 
 Saman Attar and Micheal Sullivan 
 
+ROR has been implemented
+AOR has been implemented
+AOD has been implemented
+
+/Real World Apps is a directory of all the files we tested the mutations on - more were implemnted, however these launched all 3 categories of mutants.
+
+/Working Test Pictures is a directory of a few pictures of working tests 
+
+/my app is a directory of a small smaple application to demonstate some mutant tests before testing on large real world apps 
 
 
 
@@ -12,6 +21,7 @@ Saman Attar and Micheal Sullivan
 
 
 
+#Below is Henry Cole's deafult readMe
 
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.pitest/pitest/badge.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/org.pitest/pitest)
 [![Build Status](https://travis-ci.org/hcoles/pitest.png?branch=master)](https://travis-ci.org/hcoles/pitest)
