@@ -43,9 +43,12 @@ class AORMethodVisitor extends AbstractInsnMutator {
         super(factory, methodInfo, context, writer);
     }
 
-
+    static final String MessageInt = "AOR, Replace Integer ";
     static {
-        // Dont know what to do here....
+        MUTATIONS.put(Opcodes.IADD, new InsnSubstitution(Opcodes.ISUB, MessageInt + "addition with subtraction"));
+        MUTATIONS.put(Opcodes.ISUB, new InsnSubstitution(Opcodes.IADD,  MessageInt + "subtraction with addition"));
+        MUTATIONS.put(Opcodes.IMUL, new InsnSubstitution(Opcodes.IDIV, MessageInt +  "multiplication with division"));
+        MUTATIONS.put(Opcodes.IDIV, new InsnSubstitution(Opcodes.IMUL, MessageInt + "division with multiplication"));
     }
 
     @Override
