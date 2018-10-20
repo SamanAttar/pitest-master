@@ -60,6 +60,8 @@ import org.pitest.mutationtest.engine.gregor.mutators.RorMutator2;
 import org.pitest.mutationtest.engine.gregor.mutators.RorMutator3;
 import org.pitest.mutationtest.engine.gregor.mutators.RorMutator4;
 import org.pitest.mutationtest.engine.gregor.mutators.RorMutator5;
+import org.pitest.mutationtest.engine.gregor.mutators.AORMutator;
+
 
 public final class Mutator {
 
@@ -89,8 +91,8 @@ public final class Mutator {
      */
     //Saman conects math mutator file to path
     //adding the import so we can call this math_mutator
-      //this is the enum
-      //the string is used in the pom file
+    //this is the enum
+    //the string is used in the pom file
     add("MATH", MathMutator.MATH_MUTATOR);
 
     /**
@@ -103,14 +105,14 @@ public final class Mutator {
      * Default mutator that negates conditionals.
      */
     add("NEGATE_CONDITIONALS",
-        NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR);
+            NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR);
 
     /**
      * Default mutator that replaces the relational operators with their
      * boundary counterpart.
      */
     add("CONDITIONALS_BOUNDARY",
-        ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR);
+            ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR);
 
     /**
      * Default mutator that mutates increments, decrements and assignment
@@ -128,7 +130,7 @@ public final class Mutator {
      * Optional mutator that removes method calls to non void methods.
      */
     add("NON_VOID_METHOD_CALLS",
-        NonVoidMethodCallMutator.NON_VOID_METHOD_CALL_MUTATOR);
+            NonVoidMethodCallMutator.NON_VOID_METHOD_CALL_MUTATOR);
 
     /**
      * Optional mutator that replaces constructor calls with null values.
@@ -143,6 +145,8 @@ public final class Mutator {
     add("ROR_MUTATOR4", RorMutator4.ROR_MUTATOR4);
     add("ROR_MUTATOR5", RorMutator5.ROR_MUTATOR5);
 
+    add("AOR_MUTATOR", AORMutator.AOR_MUTATOR);
+
     /**
      * Removes conditional statements so that guarded statements always execute
      * The EQUAL version ignores LT,LE,GT,GE, which is the default behaviour,
@@ -150,13 +154,13 @@ public final class Mutator {
      */
 
     add("REMOVE_CONDITIONALS_EQ_IF", new RemoveConditionalMutator(Choice.EQUAL,
-        true));
+            true));
     add("REMOVE_CONDITIONALS_EQ_ELSE", new RemoveConditionalMutator(
-        Choice.EQUAL, false));
+            Choice.EQUAL, false));
     add("REMOVE_CONDITIONALS_ORD_IF", new RemoveConditionalMutator(
-        Choice.ORDER, true));
+            Choice.ORDER, true));
     add("REMOVE_CONDITIONALS_ORD_ELSE", new RemoveConditionalMutator(
-        Choice.ORDER, false));
+            Choice.ORDER, false));
     addGroup("REMOVE_CONDITIONALS", RemoveConditionalMutator.makeMutators());
 
     add("TRUE_RETURNS", BooleanTrueReturnValsMutator.BOOLEAN_TRUE_RETURN);
@@ -170,26 +174,26 @@ public final class Mutator {
      * Experimental mutator that removed assignments to member variables.
      */
     add("EXPERIMENTAL_MEMBER_VARIABLE",
-        new org.pitest.mutationtest.engine.gregor.mutators.experimental.MemberVariableMutator());
+            new org.pitest.mutationtest.engine.gregor.mutators.experimental.MemberVariableMutator());
 
     /**
      * Experimental mutator that swaps labels in switch statements
      */
     add("EXPERIMENTAL_SWITCH",
-        new org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator());
+            new org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator());
 
     /**
      * Experimental mutator that replaces method call with one of its parameters
      * of matching type
      */
     add("EXPERIMENTAL_ARGUMENT_PROPAGATION",
-        ArgumentPropagationMutator.ARGUMENT_PROPAGATION_MUTATOR);
+            ArgumentPropagationMutator.ARGUMENT_PROPAGATION_MUTATOR);
 
     /**
      * Experimental mutator that replaces method call with this
      */
     add("EXPERIMENTAL_NAKED_RECEIVER", NakedReceiverMutator.NAKED_RECEIVER);
-    
+
     /**
      * Experimental mutator that swaps big integer methods
      */
@@ -208,13 +212,13 @@ public final class Mutator {
 
   private static Collection<MethodMutatorFactory> stronger() {
     return combine(
-        defaults(),
-        group(new RemoveConditionalMutator(Choice.EQUAL, false),
-            new SwitchMutator()));
+            defaults(),
+            group(new RemoveConditionalMutator(Choice.EQUAL, false),
+                    new SwitchMutator()));
   }
 
   private static Collection<MethodMutatorFactory> combine(
-      Collection<MethodMutatorFactory> a, Collection<MethodMutatorFactory> b) {
+          Collection<MethodMutatorFactory> a, Collection<MethodMutatorFactory> b) {
     final List<MethodMutatorFactory> l = new ArrayList<>(a);
     l.addAll(b);
     return l;
@@ -226,16 +230,17 @@ public final class Mutator {
    */
   public static Collection<MethodMutatorFactory> defaults() {
     return group(InvertNegsMutator.INVERT_NEGS_MUTATOR,
-        ReturnValsMutator.RETURN_VALS_MUTATOR, MathMutator.MATH_MUTATOR,
-        VoidMethodCallMutator.VOID_METHOD_CALL_MUTATOR,
-        NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
-        ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
+            ReturnValsMutator.RETURN_VALS_MUTATOR, MathMutator.MATH_MUTATOR,
+            VoidMethodCallMutator.VOID_METHOD_CALL_MUTATOR,
+            NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
+            ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
             RorMutator.ROR_MUTATOR,
             RorMutator2.ROR_MUTATOR2,
             RorMutator3.ROR_MUTATOR3,
             RorMutator4.ROR_MUTATOR4,
             RorMutator5.ROR_MUTATOR5,
-        IncrementsMutator.INCREMENTS_MUTATOR);
+            AORMutator.AOR_MUTATOR,
+            IncrementsMutator.INCREMENTS_MUTATOR);
 
   }
 
@@ -244,36 +249,36 @@ public final class Mutator {
    */
   public static Collection<MethodMutatorFactory> newDefaults() {
     return combine(group(InvertNegsMutator.INVERT_NEGS_MUTATOR,
-        MathMutator.MATH_MUTATOR,
-        VoidMethodCallMutator.VOID_METHOD_CALL_MUTATOR,
-        NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
-        ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
-        IncrementsMutator.INCREMENTS_MUTATOR,
+            MathMutator.MATH_MUTATOR,
+            VoidMethodCallMutator.VOID_METHOD_CALL_MUTATOR,
+            NegateConditionalsMutator.NEGATE_CONDITIONALS_MUTATOR,
+            ConditionalsBoundaryMutator.CONDITIONALS_BOUNDARY_MUTATOR,
+            IncrementsMutator.INCREMENTS_MUTATOR,
             RorMutator.ROR_MUTATOR,
             RorMutator2.ROR_MUTATOR2,
             RorMutator3.ROR_MUTATOR3,
             RorMutator4.ROR_MUTATOR4,
-            RorMutator5.ROR_MUTATOR5),
+            RorMutator5.ROR_MUTATOR5,
+            AORMutator.AOR_MUTATOR),
             betterReturns());
   }
 
-
   public static Collection<MethodMutatorFactory> betterReturns() {
     return group(BooleanTrueReturnValsMutator.BOOLEAN_TRUE_RETURN,
-        BooleanFalseReturnValsMutator.BOOLEAN_FALSE_RETURN,
-        PrimitiveReturnsMutator.PRIMITIVE_RETURN_VALS_MUTATOR,
-        EmptyObjectReturnValsMutator.EMPTY_RETURN_VALUES,
-        NullReturnValsMutator.NULL_RETURN_VALUES);
+            BooleanFalseReturnValsMutator.BOOLEAN_FALSE_RETURN,
+            PrimitiveReturnsMutator.PRIMITIVE_RETURN_VALS_MUTATOR,
+            EmptyObjectReturnValsMutator.EMPTY_RETURN_VALUES,
+            NullReturnValsMutator.NULL_RETURN_VALUES);
   }
 
   private static Collection<MethodMutatorFactory> group(
-      final MethodMutatorFactory... ms) {
+          final MethodMutatorFactory... ms) {
     return Arrays.asList(ms);
   }
 
   public static Collection<MethodMutatorFactory> byName(final String name) {
     return FCollection.map(MUTATORS.get(name),
-        Prelude.id(MethodMutatorFactory.class));
+            Prelude.id(MethodMutatorFactory.class));
   }
 
   private static void add(final String key, final MethodMutatorFactory value) {
@@ -281,14 +286,14 @@ public final class Mutator {
   }
 
   private static void addGroup(final String key,
-      final Iterable<MethodMutatorFactory> value) {
+                               final Iterable<MethodMutatorFactory> value) {
     MUTATORS.put(key, value);
   }
 
   public static Collection<MethodMutatorFactory> fromStrings(
-      final Collection<String> names) {
+          final Collection<String> names) {
     final Set<MethodMutatorFactory> unique = new TreeSet<>(
-        compareId());
+            compareId());
 
     FCollection.flatMapTo(names, fromString(), unique);
     return unique;
