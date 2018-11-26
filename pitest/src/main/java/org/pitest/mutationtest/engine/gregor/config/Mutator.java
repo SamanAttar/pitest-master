@@ -31,37 +31,13 @@ import org.pitest.functional.prelude.Prelude;
 import org.pitest.help.Help;
 import org.pitest.help.PitHelpError;
 import org.pitest.mutationtest.engine.gregor.MethodMutatorFactory;
-import org.pitest.mutationtest.engine.gregor.mutators.ArgumentPropagationMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.BooleanFalseReturnValsMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.BooleanTrueReturnValsMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.ConstructorCallMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.EmptyObjectReturnValsMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.IncrementsMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.InlineConstantMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.InvertNegsMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.MathMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.NonVoidMethodCallMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.NullReturnValsMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.PrimitiveReturnsMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator;
+import org.pitest.mutationtest.engine.gregor.mutators.*;
 import org.pitest.mutationtest.engine.gregor.mutators.RemoveConditionalMutator.Choice;
-import org.pitest.mutationtest.engine.gregor.mutators.ReturnValsMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.BigIntegerMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.NakedReceiverMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveIncrementsMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.RemoveSwitchMutator;
 import org.pitest.mutationtest.engine.gregor.mutators.experimental.SwitchMutator;
-
-import org.pitest.mutationtest.engine.gregor.mutators.RorMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.RorMutator2;
-import org.pitest.mutationtest.engine.gregor.mutators.RorMutator3;
-import org.pitest.mutationtest.engine.gregor.mutators.RorMutator4;
-import org.pitest.mutationtest.engine.gregor.mutators.RorMutator5;
-import org.pitest.mutationtest.engine.gregor.mutators.AORMutator;
-import org.pitest.mutationtest.engine.gregor.mutators.AODMutator;
 
 
 public final class Mutator {
@@ -148,6 +124,8 @@ public final class Mutator {
 
     add("AOR_MUTATOR", AORMutator.AOR_MUTATOR);
     add("AOD_MUTATOR", AODMutator.AOD_MUTATOR);
+
+    add("OBBN_Mutator", OBBNMutator.OBBN_MUTATOR);
 
     /**
      * Removes conditional statements so that guarded statements always execute
@@ -243,8 +221,8 @@ public final class Mutator {
             RorMutator5.ROR_MUTATOR5,
             AORMutator.AOR_MUTATOR,
             AODMutator.AOD_MUTATOR,
+            OBBNMutator.OBBN_MUTATOR,
             IncrementsMutator.INCREMENTS_MUTATOR);
-
   }
 
   /**
@@ -263,7 +241,8 @@ public final class Mutator {
             RorMutator4.ROR_MUTATOR4,
             RorMutator5.ROR_MUTATOR5,
             AORMutator.AOR_MUTATOR,
-            AODMutator.AOD_MUTATOR),
+            AODMutator.AOD_MUTATOR,
+            OBBNMutator.OBBN_MUTATOR),
             betterReturns());
   }
 
