@@ -129,6 +129,8 @@ public final class Mutator {
 
     add("ABS_MUTATOR", ABSMutator.ABS_MUTATOR);
 
+    add("UOI_MUTATOR", UOIMutator.UOI_MUTATOR);
+
     /**
      * Removes conditional statements so that guarded statements always execute
      * The EQUAL version ignores LT,LE,GT,GE, which is the default behaviour,
@@ -225,6 +227,7 @@ public final class Mutator {
             AODMutator.AOD_MUTATOR,
             OBBNMutator.OBBN_MUTATOR,
             ABSMutator.ABS_MUTATOR,
+            UOIMutator.UOI_MUTATOR,
             IncrementsMutator.INCREMENTS_MUTATOR);
   }
 
@@ -246,7 +249,8 @@ public final class Mutator {
             AORMutator.AOR_MUTATOR,
             AODMutator.AOD_MUTATOR,
             OBBNMutator.OBBN_MUTATOR,
-            ABSMutator.ABS_MUTATOR),
+            ABSMutator.ABS_MUTATOR,
+            UOIMutator.UOI_MUTATOR),
             betterReturns());
   }
 
