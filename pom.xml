@@ -68,7 +68,8 @@
 		<module>pitest-maven-verification</module>
 		<module>pitest-aggregator</module>
 		<module>pitest-java8-verification</module>
-	</modules>
+        <module>pit-example</module>
+    </modules>
 
 	<prerequisites>
 		<maven>3</maven>

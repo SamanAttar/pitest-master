@@ -139,6 +139,7 @@
 								<mutator>ROR_MUTATOR3</mutator>
 								<mutator>ROR_MUTATOR4</mutator>
 								<mutator>ROR_MUTATOR5</mutator>
+							    <mutator>OBBN_MUTATOR</mutator>
 						</mutators>
 				</configuration>
 		</plugin>
