@@ -42,12 +42,12 @@ class OBBNMethodVisitor extends AbstractInsnMutator {
 
     static {
         // Integer Replacement
-        MUTATIONS.put(Opcodes.IAND, new InsnSubstitution(Opcodes.IOR, "Integer. Replaced & with |"));
-        MUTATIONS.put(Opcodes.IOR, new InsnSubstitution(Opcodes.IAND, "Integer. Replaced | with &"));
+        MUTATIONS.put(Opcodes.IAND, new InsnSubstitution(Opcodes.IOR, "OBBN Mutator, int Replaced & with |"));
+        MUTATIONS.put(Opcodes.IOR, new InsnSubstitution(Opcodes.IAND, "OBBN Mutator, int. Replaced | with &"));
 
         // Long Replacement
-        MUTATIONS.put(Opcodes.LAND, new InsnSubstitution(Opcodes.LOR, "Long. Replaced & with |"));
-        MUTATIONS.put(Opcodes.LOR, new InsnSubstitution(Opcodes.LAND, "Long. Replaced | with &"));
+        MUTATIONS.put(Opcodes.LAND, new InsnSubstitution(Opcodes.LOR, "OBBN Mutator,long. Replaced & with |"));
+        MUTATIONS.put(Opcodes.LOR, new InsnSubstitution(Opcodes.LAND, "OBBN Mutator,long. Replaced | with &"));
     }
 
     @Override

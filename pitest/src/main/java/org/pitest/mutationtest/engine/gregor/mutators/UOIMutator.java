@@ -48,7 +48,7 @@ class UOIMethodVisitor extends MethodVisitor {
         // found instance of storing integer in local variable
         if (opcode == Opcodes.ISTORE) {
             //create a new instance of the MutationIdentifier for the negation
-            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " , int ++.");
+            final MutationIdentifier newId = this.context.registerMutation(this.factory,  "UOI MUTATOR. int ++.");
             if (this.context.shouldMutate(newId)) {
                 //push the integer constant 1, to simulate i++
                 super.visitInsn(Opcodes.ICONST_1);
@@ -60,7 +60,7 @@ class UOIMethodVisitor extends MethodVisitor {
         // found instance of storing double in local variable
         else if (opcode == Opcodes.DSTORE) {
             //create a new instance of the MutationIdentifier for the negation
-            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " , double ++.");
+            final MutationIdentifier newId = this.context.registerMutation(this.factory, "UOI MUTATOR. double ++.");
             if (this.context.shouldMutate(newId)) {
                 //push the double constant 1
                 super.visitInsn(Opcodes.DCONST_1);
@@ -72,7 +72,7 @@ class UOIMethodVisitor extends MethodVisitor {
         // found instance of storing long in local variable
         else if (opcode == Opcodes.LSTORE) {
             //create a new instance of the MutationIdentifier for the negation
-            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + "UOI MUTATOR. , long ++.");
+            final MutationIdentifier newId = this.context.registerMutation(this.factory,  "UOI MUTATOR. long ++.");
             if (this.context.shouldMutate(newId)) {
                 //push the long constant 1
                 super.visitInsn(Opcodes.LCONST_1);
@@ -82,7 +82,7 @@ class UOIMethodVisitor extends MethodVisitor {
         }
         // found instance of storing float in local variable
         else if (opcode == Opcodes.FSTORE) {
-            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + "UOI MUTATOR. , float ++.");
+            final MutationIdentifier newId = this.context.registerMutation(this.factory, "UOI MUTATOR. float ++.");
             if (this.context.shouldMutate(newId)) {
                 //push the float constant 1
                 super.visitInsn(Opcodes.FCONST_1);
