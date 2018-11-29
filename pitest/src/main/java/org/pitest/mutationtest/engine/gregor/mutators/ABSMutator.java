@@ -54,26 +54,26 @@ class ABSMethodVisitor extends MethodVisitor {
         super.visitVarInsn(opcode, var);
 
         if (opcode == Opcodes.ILOAD ) {
-            MutationIdentifier newId = createMutationIdentifier("Negate Integer Variable: ", var);
+            MutationIdentifier newId = createMutationIdentifier("ABS Mutator. Negated Integer Variable: ", var);
             //insert the new instruction id into bytecode
             if (this.context.shouldMutate(newId)) {
                 super.visitInsn(Opcodes.INEG);
             }
         }
         else if (opcode == Opcodes.DLOAD) {
-            MutationIdentifier newId = createMutationIdentifier("Negate Double Variable: ", var);
+            MutationIdentifier newId = createMutationIdentifier("ABS Mutator. Negate Double Variable: ", var);
             if (this.context.shouldMutate(newId)) {
                 super.visitInsn(Opcodes.DNEG);
             }
         }
         else if (opcode == Opcodes.FLOAD) {
-            MutationIdentifier newId = createMutationIdentifier("Negate Float Variable: ", var);
+            MutationIdentifier newId = createMutationIdentifier("ABS Mutator. Negate Float Variable: ", var);
             if (this.context.shouldMutate(newId)) {
                 super.visitInsn(Opcodes.FNEG);
             }
         }
         else if (opcode == Opcodes.LLOAD) {
-            MutationIdentifier newId = createMutationIdentifier("Negate Long Variable: ", var);
+            MutationIdentifier newId = createMutationIdentifier("ABS Mutator. Negate Long Variable: ", var);
             if (this.context.shouldMutate(newId)) {
                 super.visitInsn(Opcodes.LNEG);
             }

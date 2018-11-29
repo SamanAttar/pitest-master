@@ -72,7 +72,7 @@ class UOIMethodVisitor extends MethodVisitor {
         // found instance of storing long in local variable
         else if (opcode == Opcodes.LSTORE) {
             //create a new instance of the MutationIdentifier for the negation
-            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " , long ++.");
+            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + "UOI MUTATOR. , long ++.");
             if (this.context.shouldMutate(newId)) {
                 //push the long constant 1
                 super.visitInsn(Opcodes.LCONST_1);
@@ -82,7 +82,7 @@ class UOIMethodVisitor extends MethodVisitor {
         }
         // found instance of storing float in local variable
         else if (opcode == Opcodes.FSTORE) {
-            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " , float ++.");
+            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + "UOI MUTATOR. , float ++.");
             if (this.context.shouldMutate(newId)) {
                 //push the float constant 1
                 super.visitInsn(Opcodes.FCONST_1);
