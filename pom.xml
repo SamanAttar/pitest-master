@@ -7,7 +7,7 @@
 	</organization>
 	<artifactId>pitest-parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.4.4-SNAPSHOT</version>
+	<version>1.4.4-incubating-SNAPSHOT</version>
 	<name>pitest-parent</name>
 	<url>http://pitest.org</url>
 	<description>Mutation testing system for java - parent project</description>
@@ -145,8 +145,8 @@
 
 	<build>
 
-		<!-- specification of versions of all plugins used in any module also common 
-			configuration is specified there (but module-specific stuff is specified 
+		<!-- specification of versions of all plugins used in any module also common
+			configuration is specified there (but module-specific stuff is specified
 			in other pom.xml files) -->
 		<pluginManagement>
 			<plugins>
@@ -182,7 +182,7 @@
 							<configuration>
 								<failOnViolation>true</failOnViolation>
 								<configLocation>pitest/checkstyle.xml</configLocation>
-                                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>	
+                                <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
 							</configuration>
 						</execution>
 					</executions>
@@ -284,7 +284,7 @@
 		</repository>
 	</distributionManagement>
 
-	<!-- versions of libraries which are used in different projects or which 
+	<!-- versions of libraries which are used in different projects or which
 		are used for few artifacts -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
