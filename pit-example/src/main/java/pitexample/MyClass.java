@@ -32,4 +32,18 @@ public class MyClass {
 
         return false;
     }
+
+    public int incrementByOne(int a) {
+
+        int b = a;
+        b++;
+        return b;
+    }
+
+    public int decrementByOne(int a) {
+
+        int b = a;
+        b--;
+        return b;
+    }
 }
