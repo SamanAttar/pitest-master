@@ -8,15 +8,15 @@ public class MyClassTest {
     @Test
     public void testMe() {
         MyClass sut = new MyClass();
-        assertTrue(sut.myMethod(1, true));
-        assertTrue(sut.myMethod(2, true));
+        assertTrue(sut.myMethod(1));
+        assertTrue(sut.myMethod(2));
     }
 
     @Test
     public void testMe2() {
         MyClass sut = new MyClass();
-        assertTrue(sut.myMethod(1, false));
-        assertTrue(sut.myMethod(2, false));
-        assertFalse(sut.myMethod(0,false));
+        assertTrue(sut.myMethod(1));
+        assertTrue(sut.myMethod(2));
+        assertFalse(sut.myMethod(0));
     }
 }

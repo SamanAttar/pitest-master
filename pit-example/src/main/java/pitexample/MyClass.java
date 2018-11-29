@@ -2,11 +2,8 @@ package pitexample;
 
 public class MyClass {
 
-    public boolean myMethod(int a, boolean flag) {
+    public boolean myMethod(int a) {
         if (a >0) {
-            return true;
-        }
-        if (flag) {
             return true;
         }
 
