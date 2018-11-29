@@ -49,7 +49,7 @@ public abstract class ReportTestBase {
     this.metaDataExtractor = new MetaDataExtractor();
     this.plugins = PluginServices.makeForContextLoader();
     this.data = new ReportOptions();
-    this.data.setSourceDirs(Collections.<File> emptyList());
+    this.data.setSourceDirs(Collections.emptyList());
     this.data.setGroupConfig(new TestGroupConfig());
     this.data.setTestPlugin("junit");
   }

@@ -125,7 +125,7 @@ public final class Mutator {
     add("AOR_MUTATOR", AORMutator.AOR_MUTATOR);
     add("AOD_MUTATOR", AODMutator.AOD_MUTATOR);
 
-    add("OBBN_Mutator", OBBNMutator.OBBN_MUTATOR);
+    add("OBBN_MUTATOR", OBBNMutator.OBBN_MUTATOR);
 
     add("ABS_MUTATOR", ABSMutator.ABS_MUTATOR);
 

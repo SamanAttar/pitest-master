@@ -92,7 +92,7 @@ public class TestMutationTesting {
     this.metaDataExtractor = new MetaDataExtractor();
     this.mae = new MutationAnalysisExecutor(1,
         Collections
-            .<MutationResultListener> singletonList(this.metaDataExtractor));
+            .singletonList(this.metaDataExtractor));
   }
 
   public static class NoMutations {

@@ -125,19 +125,19 @@ public class EmptyObjectReturnValsTest extends MutatorTestBase {
   @Test
   public void mutatesListToEmptyList() throws Exception {
     assertMutantCallableReturns(new AList(),
-        createFirstMutant(AList.class), Collections.<String>emptyList());
+        createFirstMutant(AList.class), Collections.emptyList());
   }
 
   @Test
   public void mutatesSetToEmptySet() throws Exception {
     assertMutantCallableReturns(new ASet(),
-        createFirstMutant(ASet.class), Collections.<String>emptySet());
+        createFirstMutant(ASet.class), Collections.emptySet());
   }
 
   @Test
   public void mutatesCollectionsToEmptyList() throws Exception {
     assertMutantCallableReturns(new ACollection(),
-        createFirstMutant(ACollection.class), Collections.<String>emptyList());
+        createFirstMutant(ACollection.class), Collections.emptyList());
   }
 
 // must build on java 7

@@ -16,8 +16,8 @@ package com.example;
 
 public class CoveredByEasyMock {
 
-  public static interface AnInterface {
-    public void callMe();
+  public interface AnInterface {
+    void callMe();
   }
 
   public void doStuff(final AnInterface ai) {

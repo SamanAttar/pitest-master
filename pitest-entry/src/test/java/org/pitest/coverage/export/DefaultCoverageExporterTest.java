@@ -35,7 +35,7 @@ public class DefaultCoverageExporterTest {
 
   @Test
   public void shouldWriteValidXMLDocumentWhenNoCoverage() {
-    this.testee.recordCoverage(Collections.<BlockCoverage> emptyList());
+    this.testee.recordCoverage(Collections.emptyList());
     final String actual = this.out.toString();
     assertThat(actual).contains("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
     assertThat(actual).contains("<coverage>");

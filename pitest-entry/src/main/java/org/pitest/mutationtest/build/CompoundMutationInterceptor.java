@@ -20,7 +20,7 @@ public class CompoundMutationInterceptor implements MutationInterceptor {
   }
 
   public static MutationInterceptor nullInterceptor() {
-    return new CompoundMutationInterceptor(Collections.<MutationInterceptor>emptyList());
+    return new CompoundMutationInterceptor(Collections.emptyList());
   }
 
   @Override

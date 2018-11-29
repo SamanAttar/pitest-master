@@ -86,8 +86,8 @@ public class TestGregorMutater extends MutatorTestBase {
 
   }
 
-  static enum AnEnum {
-    Foo, Bar;
+  enum AnEnum {
+    Foo, Bar
   }
 
   @Test
@@ -97,7 +97,7 @@ public class TestGregorMutater extends MutatorTestBase {
     assertTrue(actualDetails.isEmpty());
   }
 
-  static enum EnumWithCustomConstructor {
+  enum EnumWithCustomConstructor {
     Foo, Bar;
 
     int i;

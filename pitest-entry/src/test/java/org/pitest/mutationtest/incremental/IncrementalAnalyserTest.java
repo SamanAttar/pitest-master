@@ -44,7 +44,7 @@ public class IncrementalAnalyserTest {
   public void shouldStartNewMutationsAtAStatusOfNotStarted() {
     final MutationDetails md = makeMutation("foo");
     when(this.history.getPreviousResult(any(MutationIdentifier.class)))
-    .thenReturn(Optional.<MutationStatusTestPair> empty());
+    .thenReturn(Optional.empty());
 
     final Collection<MutationResult> actual = this.testee.analyse(Collections
         .singletonList(md));
@@ -109,7 +109,7 @@ public class IncrementalAnalyserTest {
     setHistoryForAllMutationsTo(DetectionStatus.KILLED, killingTest);
 
     final Collection<TestInfo> tests = Collections.singleton(new TestInfo(
-        "TEST_CLASS", killingTest, 0, Optional.<ClassName> empty(), 0));
+        "TEST_CLASS", killingTest, 0, Optional.empty(), 0));
     when(this.coverage.getTestsForClass(any(ClassName.class)))
     .thenReturn(tests);
     when(this.history.hasClassChanged(any(ClassName.class))).thenReturn(false);
@@ -127,7 +127,7 @@ public class IncrementalAnalyserTest {
     setHistoryForAllMutationsTo(DetectionStatus.KILLED, killingTest);
 
     final Collection<TestInfo> tests = Collections.singleton(new TestInfo(
-        "TEST_CLASS", killingTest, 0, Optional.<ClassName> empty(), 0));
+        "TEST_CLASS", killingTest, 0, Optional.empty(), 0));
     when(this.coverage.getTestsForClass(any(ClassName.class)))
     .thenReturn(tests);
     when(this.history.hasClassChanged(ClassName.fromString("foo"))).thenReturn(

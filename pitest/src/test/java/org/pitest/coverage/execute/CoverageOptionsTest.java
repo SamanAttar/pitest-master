@@ -11,11 +11,11 @@ public class CoverageOptionsTest {
 
   TestPluginArguments pitConfig = TestPluginArguments.defaults();
 
-  CoverageOptions testee = new CoverageOptions(Collections.singletonList("*"), Collections.<String>emptyList(), this.pitConfig, false, 0);
+  CoverageOptions testee = new CoverageOptions(Collections.singletonList("*"), Collections.emptyList(), this.pitConfig, false, 0);
 
   @Test
   public void shouldIncludeTargettedClasses() {
-    this.testee = new CoverageOptions(Collections.singletonList("com/example/*"), Collections.<String>emptyList(), this.pitConfig, false, 0);
+    this.testee = new CoverageOptions(Collections.singletonList("com/example/*"), Collections.emptyList(), this.pitConfig, false, 0);
 
     assertThat(this.testee.getFilter().test("com/example/Foo")).isTrue();
   }

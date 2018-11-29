@@ -39,7 +39,7 @@ import org.pitest.testapi.execute.containers.UnContainer;
 @RunWith(Parameterized.class)
 public class TestContainersSendCorrectNotifications {
 
-  private static interface ContainerFactory {
+  private interface ContainerFactory {
 
     Container getContainer();
 
@@ -79,16 +79,16 @@ public class TestContainersSendCorrectNotifications {
     public void one() {
 
     }
-  };
+  }
 
-  public static class OneFailingTest {
+    public static class OneFailingTest {
     @TestAnnotationForTesting
     public void one() {
       throw new AssertionError();
     }
-  };
+  }
 
-  @Test
+    @Test
   public void shouldSendCorrectNotificationsForSinglePassingTest() {
     run(OnePassingTest.class);
     verify(this.listener).onTestStart(any(Description.class));

@@ -112,7 +112,7 @@ public class ObjectOutputStreamHistoryStoreTest {
     public void shouldNotAttemptToWriteToFileWhenNoneSupplied() {
         try {
             this.testee = new ObjectOutputStreamHistoryStore(this.writerFactory,
-                Optional.<Reader> empty());
+                Optional.empty());
             this.testee.initialize();
         } catch (final Exception ex) {
             fail(ex.getMessage());
@@ -143,7 +143,7 @@ public class ObjectOutputStreamHistoryStoreTest {
     private void recordClassPathWithTestee(
         final HierarchicalClassId... classIdentifiers) {
         this.testee = new ObjectOutputStreamHistoryStore(this.writerFactory,
-            Optional.<Reader> empty());
+            Optional.empty());
         final Collection<HierarchicalClassId> ids = Arrays.asList(classIdentifiers);
         this.testee.recordClassPath(ids, this.coverage);
     }

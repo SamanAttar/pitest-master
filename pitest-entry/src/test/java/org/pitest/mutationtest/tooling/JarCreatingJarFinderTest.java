@@ -118,19 +118,19 @@ public class JarCreatingJarFinderTest {
     this.thrown.expect(PitError.class);
 
     when(this.byteSource.getBytes(anyString())).thenReturn(
-        Optional.<byte[]> empty());
+        Optional.empty());
 
     this.testee.getJarLocation();
   }
 
   private void assertGeneratedManifestEntryEquals(final String key,
-      final String expected) throws IOException, FileNotFoundException {
+      final String expected) throws IOException {
     final String am = getGeneratedManifestAttribute(key);
     assertEquals(expected, am);
   }
 
   private String getGeneratedManifestAttribute(final String key)
-      throws IOException, FileNotFoundException {
+      throws IOException {
     final Optional<String> actual = this.testee.getJarLocation();
     final File f = new File(actual.get());
     try (JarInputStream jis = new JarInputStream(new FileInputStream(f))) {

@@ -37,7 +37,7 @@ public class DirectorySourceLocator implements SourceLocator {
     public Optional<Reader> apply(final File f) {
       if (f.exists()) {
         try {
-          return Optional.<Reader> ofNullable(new FileReader(f));
+          return Optional.ofNullable(new FileReader(f));
         } catch (final FileNotFoundException e) {
           return Optional.empty();
         }
@@ -45,9 +45,9 @@ public class DirectorySourceLocator implements SourceLocator {
       return Optional.empty();
     }
 
-  };
+  }
 
-  DirectorySourceLocator(final File root,
+    DirectorySourceLocator(final File root,
       final Function<File, Optional<Reader>> fileToReader) {
     this.root = root;
     this.fileToReader = fileToReader;

@@ -42,7 +42,7 @@ public class KnownStatusMutationTestUnitTest {
   @Test
   public void shouldHaveHighPriorityToAnalyse() {
     this.testee = new KnownStatusMutationTestUnit(
-        Collections.<MutationResult> emptyList());
+        Collections.emptyList());
     assertEquals(Integer.MAX_VALUE, this.testee.priority());
   }
 

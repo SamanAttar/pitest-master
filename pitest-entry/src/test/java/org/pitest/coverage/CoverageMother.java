@@ -60,7 +60,7 @@ public class CoverageMother {
         .withTestUnitDescription(
             new Description("fooTest", fooTest.asJavaName()))
             .withExecutionTime(1).withGreenSuite(true)
-            .withVisitedBlocks(Collections.<BlockLocation> emptyList());
+            .withVisitedBlocks(Collections.emptyList());
   }
 
   private static Generator<BlockLocationBuilder, BlockLocation> blockLocationSeed() {

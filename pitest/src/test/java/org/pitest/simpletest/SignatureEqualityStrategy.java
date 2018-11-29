@@ -49,4 +49,4 @@ public class SignatureEqualityStrategy implements EqualityStrategy<TestMethod> {
     return false;
   }
 
-};
+}

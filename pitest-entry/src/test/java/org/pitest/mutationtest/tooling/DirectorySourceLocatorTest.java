@@ -43,7 +43,7 @@ public class DirectorySourceLocatorTest {
     this.root = new File(".");
     this.testee = new DirectorySourceLocator(this.root, this.locator);
     when(this.locator.apply(any(File.class)))
-    .thenReturn(Optional.<Reader> empty());
+    .thenReturn(Optional.empty());
   }
 
   @Test

@@ -173,9 +173,9 @@ public class NullVisitor extends ClassVisitor {
     public void visitVarInsn(final int arg0, final int arg1) {
     }
 
-  };
+  }
 
-  @Override
+    @Override
   public void visit(final int arg0, final int arg1, final String arg2,
       final String arg3, final String arg4, final String[] arg5) {
   }

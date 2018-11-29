@@ -61,7 +61,7 @@ public class MutationTestBuilderTest {
   @Test
   public void shouldCreateNoUnitsWhenNoMutationsFound() {
     when(this.source.createMutations(any(ClassName.class))).thenReturn(
-        Collections.<MutationDetails> emptyList());
+        Collections.emptyList());
     assertTrue(this.testee.createMutationTestUnits(
         Arrays.asList(ClassName.fromString("foo"))).isEmpty());
   }

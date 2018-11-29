@@ -189,10 +189,10 @@ public class ScmMojoTest extends BasePitMojoTest {
 
   private void setupToReturnNoModifiedFiles() throws ScmException {
     when(this.manager.status(any(ScmRepository.class), any(ScmFileSet.class)))
-        .thenReturn(new StatusScmResult("", Collections.<ScmFile> emptyList()));
+        .thenReturn(new StatusScmResult("", Collections.emptyList()));
   }
 
   private Map<String, String> anyMap() {
-    return Matchers.<Map<String, String>> any();
+    return Matchers.any();
   }
 }

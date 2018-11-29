@@ -44,9 +44,9 @@ public class TestPitest {
     public void shouldPass() {
 
     }
-  };
+  }
 
-  @Test
+    @Test
   public void shouldNotifyListenerOfRunStart() {
     run(PassingTest.class);
     verify(this.listener).onRunStart();
@@ -81,9 +81,9 @@ public class TestPitest {
     public void willFail() {
       throw new AssertionError();
     }
-  };
+  }
 
-  @Test
+    @Test
   public void shouldReportedAsFailureIfAssertionThrown() {
     run(FailsAssertion.class);
     verify(this.listener).onTestFailure(any(TestResult.class));
@@ -95,9 +95,9 @@ public class TestPitest {
       throw new NullPointerException();
     }
 
-  };
+  }
 
-  @Test
+    @Test
   public void shouldReportSuccessIfExpectedExceptionThrown() {
     run(ExpectedExceptionThrown.class);
     verify(this.listener).onTestSuccess(any(TestResult.class));
@@ -108,9 +108,9 @@ public class TestPitest {
     public void expectToThrowNullPointer() {
 
     }
-  };
+  }
 
-  @Test
+    @Test
   public void shouldReportFailureIfExpectedExceptionNotThrown() {
     run(ExpectedExceptionNotThrown.class);
     verify(this.listener).onTestFailure(any(TestResult.class));
@@ -121,9 +121,9 @@ public class TestPitest {
     public void willFailWithError() throws Exception {
       throw new FileNotFoundException();
     }
-  };
+  }
 
-  @Test
+    @Test
   public void shouldReportFailureWhenExceptionThrownAndNoExpectationSet() {
     run(UnexpectedExceptionThrown.class);
     verify(this.listener).onTestFailure(any(TestResult.class));
@@ -134,9 +134,9 @@ public class TestPitest {
     public void willFailWithError() throws Exception {
       throw new FileNotFoundException();
     }
-  };
+  }
 
-  @Test
+    @Test
   public void shouldReportFailureWhenThrownExceptionDifferentFromExpectedException() {
     run(WrongExceptionThrown.class);
     verify(this.listener).onTestFailure(any(TestResult.class));
@@ -147,9 +147,9 @@ public class TestPitest {
     public void shouldPass() throws Exception {
       throw new FileNotFoundException();
     }
-  };
+  }
 
-  @Test
+    @Test
   public void shouldReportSuccessWhenSubclassOfExpectedExceptionThrown() {
     run(SubclassOfExpectedExceptionThrown.class);
     verify(this.listener).onTestSuccess(any(TestResult.class));
@@ -159,9 +159,9 @@ public class TestPitest {
     @TestAnnotationForTesting
     public static void staticTestMethod() {
     }
-  };
+  }
 
-  @Test
+    @Test
   public void shouldBeAbleToCallStaticTestMethods() {
     run(StaticTestCase.class);
     verify(this.listener).onTestSuccess(any(TestResult.class));

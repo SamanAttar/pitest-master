@@ -62,7 +62,7 @@ public class CompoundTestListenerTest {
   @Test
   public void shouldCallOnTestErrorForAllChildren() {
     final ClassMutationResults metaData = new ClassMutationResults(
-        Collections.<MutationResult> emptyList());
+        Collections.emptyList());
     this.testee.handleMutationResult(metaData);
     verify(this.firstChild, times(1)).handleMutationResult(metaData);
     verify(this.secondChild, times(1)).handleMutationResult(metaData);

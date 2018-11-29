@@ -47,9 +47,10 @@ class UOIMethodVisitor extends MethodVisitor {
 
         // found instance of storing integer in local variable
         if (opcode == Opcodes.ISTORE) {
-            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " incremented.");
+            //create a new instance of the MutationIdentifier for the negation
+            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " , int ++.");
             if (this.context.shouldMutate(newId)) {
-                //push the integer constant 1
+                //push the integer constant 1, to simulate i++
                 super.visitInsn(Opcodes.ICONST_1);
                 // add the two ints in the stack
                 super.visitInsn(Opcodes.IADD);
@@ -58,7 +59,8 @@ class UOIMethodVisitor extends MethodVisitor {
         }
         // found instance of storing double in local variable
         else if (opcode == Opcodes.DSTORE) {
-            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " incremented.");
+            //create a new instance of the MutationIdentifier for the negation
+            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " , double ++.");
             if (this.context.shouldMutate(newId)) {
                 //push the double constant 1
                 super.visitInsn(Opcodes.DCONST_1);
@@ -69,7 +71,8 @@ class UOIMethodVisitor extends MethodVisitor {
 
         // found instance of storing long in local variable
         else if (opcode == Opcodes.LSTORE) {
-            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " incremented.");
+            //create a new instance of the MutationIdentifier for the negation
+            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " , long ++.");
             if (this.context.shouldMutate(newId)) {
                 //push the long constant 1
                 super.visitInsn(Opcodes.LCONST_1);
@@ -79,7 +82,7 @@ class UOIMethodVisitor extends MethodVisitor {
         }
         // found instance of storing float in local variable
         else if (opcode == Opcodes.FSTORE) {
-            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " incremented.");
+            final MutationIdentifier newId = this.context.registerMutation(this.factory, opcode + " , float ++.");
             if (this.context.shouldMutate(newId)) {
                 //push the float constant 1
                 super.visitInsn(Opcodes.FCONST_1);
@@ -92,7 +95,9 @@ class UOIMethodVisitor extends MethodVisitor {
 
     @Override
     public void visitIincInsn(final int var, final int val) {
-        final MutationIdentifier newId = this.context.registerMutation(this.factory, "Changed " + val + " to 0");
+        //create a new instance of the MutationIdentifier for the negation
+        final MutationIdentifier newId = this.context.registerMutation(this.factory, "UOI MUTATOR. i++ and i-- ");
+
         if (this.context.shouldMutate(newId)) {
             this.mv.visitIincInsn(var, 0);
         } else {

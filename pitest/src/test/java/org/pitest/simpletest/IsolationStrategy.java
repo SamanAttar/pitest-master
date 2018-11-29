@@ -20,6 +20,6 @@ package org.pitest.simpletest;
  */
 public interface IsolationStrategy {
 
-  public boolean shouldIsolate(String name);
+  boolean shouldIsolate(String name);
 
 }

@@ -104,19 +104,13 @@ class HasNonShortCutEquals {
 
 class HasNonOveridingEquals {
   public boolean equals(HasNonOveridingEquals obj) {
-    if (this == obj) {
-      return true;
-    }
-    return false;
+      return this == obj;
   }
 }
 
 class HasShortcutInGeneralMethod {
   public boolean compare(Object obj) {
-    if (this == obj) {
-      return true;
-    }
-    return false;
+      return this == obj;
   }
 }
 

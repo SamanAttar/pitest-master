@@ -150,7 +150,7 @@ public class PitMojoTest extends BasePitMojoTest {
 
   private void setupCoverage(long mutationScore, int lines, int linesCovered)
       throws MojoExecutionException {
-    Iterable<Score> scores = Collections.<Score>emptyList();
+    Iterable<Score> scores = Collections.emptyList();
     final MutationStatistics stats = new MutationStatistics(scores, 100, mutationScore, 0);
     CoverageSummary sum = new CoverageSummary(lines, linesCovered);
     final CombinedStatistics cs = new CombinedStatistics(stats, sum);
@@ -162,7 +162,7 @@ public class PitMojoTest extends BasePitMojoTest {
   
   private void setupSuvivingMutants(long survivors)
       throws MojoExecutionException {
-    Iterable<Score> scores = Collections.<Score>emptyList();
+    Iterable<Score> scores = Collections.emptyList();
     int detected = 100;
     final MutationStatistics stats = new MutationStatistics(scores, detected + survivors, detected, 0);
     CoverageSummary sum = new CoverageSummary(0, 0);
@@ -174,7 +174,7 @@ public class PitMojoTest extends BasePitMojoTest {
   }
 
   private Map<String, String> anyMap() {
-    return Matchers.<Map<String, String>> any();
+    return Matchers.any();
   }
 
 }

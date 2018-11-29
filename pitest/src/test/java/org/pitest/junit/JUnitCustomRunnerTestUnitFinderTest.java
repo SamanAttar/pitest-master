@@ -63,8 +63,8 @@ public class JUnitCustomRunnerTestUnitFinderTest {
   @Before
   public void setup() {
     MockitoAnnotations.initMocks(this);
-    this.testee = new JUnitCustomRunnerTestUnitFinder(new TestGroupConfig(), Collections.<String>emptyList(),
-            Collections.<String>emptyList());
+    this.testee = new JUnitCustomRunnerTestUnitFinder(new TestGroupConfig(), Collections.emptyList(),
+            Collections.emptyList());
   }
 
   @Test
@@ -406,11 +406,11 @@ public class JUnitCustomRunnerTestUnitFinderTest {
     assertThat(actual).isEmpty();
   }
 
-  static interface ACategory {
+  interface ACategory {
 
   }
 
-  static interface AnotherCategory {
+  interface AnotherCategory {
 
   }
 
@@ -439,23 +439,23 @@ public class JUnitCustomRunnerTestUnitFinderTest {
 
   private void setConfig(TestGroupConfig config) {
     this.testee = new JUnitCustomRunnerTestUnitFinder(
-        config, Collections.<String>emptyList(), Collections.<String>emptyList());
+        config, Collections.emptyList(), Collections.emptyList());
   }
 
 
   private void excludeRunner(Class<? extends Runner> class1) {
-    final List<String> include = Collections.<String>emptyList();
-    final List<String> exclude = Collections.<String>emptyList();
+    final List<String> include = Collections.emptyList();
+    final List<String> exclude = Collections.emptyList();
     this.testee = new JUnitCustomRunnerTestUnitFinder(
             new TestGroupConfig(include,exclude), Collections.singletonList(class1.getName()),
-            Collections.<String>emptyList());
+            Collections.emptyList());
   }
 
   private void setIncludedTestMethods(Collection<String> includedTestMethods) {
-    final List<String> include = Collections.<String>emptyList();
-    final List<String> exclude = Collections.<String>emptyList();
+    final List<String> include = Collections.emptyList();
+    final List<String> exclude = Collections.emptyList();
     this.testee = new JUnitCustomRunnerTestUnitFinder(
-            new TestGroupConfig(include,exclude), Collections.<String>emptyList(), includedTestMethods);
+            new TestGroupConfig(include,exclude), Collections.emptyList(), includedTestMethods);
   }
 
 
