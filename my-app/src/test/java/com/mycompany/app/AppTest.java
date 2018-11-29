@@ -37,5 +37,6 @@ public class AppTest
         //assertTrue( true );
         assertEquals(3, tester.add(1,2));
         assertTrue(tester.compare(0,2));
+        assertEquals(5, tester.sub(8,3));
     }
 }

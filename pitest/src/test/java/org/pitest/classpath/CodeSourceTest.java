@@ -93,7 +93,7 @@ public class CodeSourceTest {
     when(this.repository.fetchClass(ClassName.fromString("Foo"))).thenReturn(
         Optional.ofNullable(this.foo));
     when(this.repository.fetchClass(ClassName.fromString("Unknown")))
-    .thenReturn(Optional.<ClassInfo> empty());
+    .thenReturn(Optional.empty());
     assertEquals(Arrays.asList(this.foo), this.testee.getClassInfo(Arrays
         .asList(ClassName.fromString("Foo"), ClassName.fromString("Unknown"))));
   }

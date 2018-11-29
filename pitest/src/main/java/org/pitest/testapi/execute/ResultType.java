@@ -36,9 +36,9 @@ public enum ResultType {
 
   private interface ResultToListenerSideEffect extends
   Function<TestResult, SideEffect1<TestListener>> {
-  };
+  }
 
-  ResultType(final ResultToListenerSideEffect f) {
+    ResultType(final ResultToListenerSideEffect f) {
     this.function = f;
   }
 
@@ -46,9 +46,9 @@ public enum ResultType {
 
   public SideEffect1<TestListener> getListenerFunction(final TestResult result) {
     return this.function.apply(result);
-  };
+  }
 
-  public static SideEffect1<TestListener> success(final TestResult result) {
+    public static SideEffect1<TestListener> success(final TestResult result) {
     return a -> a.onTestSuccess(result);
   }
 

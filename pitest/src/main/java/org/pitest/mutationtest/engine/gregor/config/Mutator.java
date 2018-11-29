@@ -125,9 +125,11 @@ public final class Mutator {
     add("AOR_MUTATOR", AORMutator.AOR_MUTATOR);
     add("AOD_MUTATOR", AODMutator.AOD_MUTATOR);
 
-    add("OBBN_Mutator", OBBNMutator.OBBN_MUTATOR);
+    add("OBBN_MUTATOR", OBBNMutator.OBBN_MUTATOR);
 
     add("ABS_MUTATOR", ABSMutator.ABS_MUTATOR);
+
+    add("UOI_MUTATOR", UOIMutator.UOI_MUTATOR);
 
     /**
      * Removes conditional statements so that guarded statements always execute
@@ -225,6 +227,7 @@ public final class Mutator {
             AODMutator.AOD_MUTATOR,
             OBBNMutator.OBBN_MUTATOR,
             ABSMutator.ABS_MUTATOR,
+            UOIMutator.UOI_MUTATOR,
             IncrementsMutator.INCREMENTS_MUTATOR);
   }
 
@@ -246,7 +249,8 @@ public final class Mutator {
             AORMutator.AOR_MUTATOR,
             AODMutator.AOD_MUTATOR,
             OBBNMutator.OBBN_MUTATOR,
-            ABSMutator.ABS_MUTATOR),
+            ABSMutator.ABS_MUTATOR,
+            UOIMutator.UOI_MUTATOR),
             betterReturns());
   }
 

@@ -8,7 +8,7 @@ import org.pitest.mutationtest.MutationEngineFactory;
 
 public class ServiceLoaderTest {
 
-  public static interface AService {
+  public interface AService {
 
   }
 

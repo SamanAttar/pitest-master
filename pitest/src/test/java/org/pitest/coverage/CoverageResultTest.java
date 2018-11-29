@@ -17,7 +17,7 @@ public class CoverageResultTest {
   @Test
   public void shouldCalculateCorrectNumberOfCoveredBlocksWhenNoneCovered() {
     this.testee = new CoverageResult(null, 0, true,
-        Collections.<BlockLocation> emptyList());
+        Collections.emptyList());
     assertEquals(0, this.testee.getNumberOfCoveredBlocks());
   }
 

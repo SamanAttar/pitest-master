@@ -51,7 +51,7 @@ public class DefaultBuildVerifierTest {
 
   }
 
-  private static interface AnInterface {
+  private interface AnInterface {
 
   }
 
@@ -87,7 +87,7 @@ public class DefaultBuildVerifierTest {
 
   @Test
   public void shouldNotThrowAnErrorWhenNoClassesFound() {
-    when(this.code.getCode()).thenReturn(Collections.<ClassInfo> emptyList());
+    when(this.code.getCode()).thenReturn(Collections.emptyList());
     try {
       this.testee.verify(this.code);
     } catch (final PitHelpError e) {

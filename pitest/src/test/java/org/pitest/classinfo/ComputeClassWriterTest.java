@@ -22,7 +22,7 @@ public class ComputeClassWriterTest {
         callTesteeWith(Integer.class, String.class));
   }
 
-  static interface ICommon {
+  interface ICommon {
 
   }
 
@@ -58,11 +58,11 @@ public class ComputeClassWriterTest {
         callTesteeWith(ImplementsICommon1.class, ImplementsICommon2.class));
   }
 
-  static interface ICommon2 extends ICommon {
+  interface ICommon2 extends ICommon {
 
   }
 
-  static interface ICommon3 extends ICommon {
+  interface ICommon3 extends ICommon {
 
   }
 
@@ -100,11 +100,11 @@ public class ComputeClassWriterTest {
         callTesteeWith(GrandChild.class, Child1.class));
   }
 
-  static interface ICommonGrandChild extends ICommon3 {
+  interface ICommonGrandChild extends ICommon3 {
 
   }
 
-  static interface ICommonGreatGrandChild extends ICommon3 {
+  interface ICommonGreatGrandChild extends ICommon3 {
 
   }
 

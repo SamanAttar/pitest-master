@@ -15,6 +15,15 @@ public class App
     return z+a;
   }
 
+  public static int sub(int a, int b)
+  {
+    //check to see if a is greater than b
+    if(a > b && b < a)
+      return a-b;
+    else
+      return 0;
+  }
+
   public static boolean compare(int a, int z)
   {
     if(a == 0)

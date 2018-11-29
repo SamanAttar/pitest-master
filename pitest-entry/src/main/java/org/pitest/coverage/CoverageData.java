@@ -161,7 +161,7 @@ public class CoverageData implements CoverageDatabase {
     final Collection<ClassInfo> value = this.getClassesForFileCache().get(
         keyFromSourceAndPackage(sourceFile, packageName));
     if (value == null) {
-      return Collections.<ClassInfo> emptyList();
+      return Collections.emptyList();
     } else {
       return value;
     }

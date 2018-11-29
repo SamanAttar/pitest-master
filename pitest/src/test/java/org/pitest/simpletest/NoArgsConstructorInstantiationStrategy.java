@@ -24,7 +24,7 @@ InstantiationStrategy {
 
   @Override
   public List<TestStep> instantiations(final Class<?> clazz) {
-    return Collections.<TestStep> singletonList(NoArgsInstantiateStep
+    return Collections.singletonList(NoArgsInstantiateStep
         .instantiate(clazz));
   }
 

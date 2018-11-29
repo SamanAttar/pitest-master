@@ -51,7 +51,7 @@ public class SurefireConfigConverterTest {
   public void shouldKeepExistingExclusions() throws Exception {
     this.surefireConfig = makeConfig("<excludes><exclude>A</exclude><exclude>B</exclude></excludes>");
     this.options.setExcludedTestClasses(Collections
-        .<Predicate<String>> singletonList(new Glob("Foo")));
+        .singletonList(new Glob("Foo")));
     ReportOptions actual = this.testee
         .update(this.options, this.surefireConfig);
 
@@ -91,7 +91,7 @@ public class SurefireConfigConverterTest {
   @Test
   public void shouldNotUseSurefireGroupsWhenPitestIncludesSpecified()
       throws Exception {
-    TestGroupConfig gc = new TestGroupConfig(Collections.<String> emptyList(),
+    TestGroupConfig gc = new TestGroupConfig(Collections.emptyList(),
         Arrays.asList("bar"));
     this.options.setGroupConfig(gc);
     this.surefireConfig = makeConfig("<groups>com.example.Unit com.example.Fast</groups>");
@@ -105,7 +105,7 @@ public class SurefireConfigConverterTest {
   public void shouldNotUseSurefireGroupsWhenPitestExcludesSpecified()
       throws Exception {
     TestGroupConfig gc = new TestGroupConfig(Arrays.asList("bar"),
-        Collections.<String> emptyList());
+        Collections.emptyList());
     this.options.setGroupConfig(gc);
     this.surefireConfig = makeConfig("<groups>com.example.Unit com.example.Fast</groups>");
 

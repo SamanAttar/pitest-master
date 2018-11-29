@@ -46,7 +46,7 @@ public class MutationMetaDataTest {
   @Test
   public void shouldNotCreateEmptyClassResultsObjects() {
     final MutationMetaData testee = new MutationMetaData(
-        Collections.<MutationResult> emptyList());
+        Collections.emptyList());
     assertThat(testee.toClassResults()).isEmpty();
   }
 

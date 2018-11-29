@@ -31,8 +31,8 @@ public class TestPluginArguments implements Serializable {
   }
 
   public static TestPluginArguments defaults() {
-    return new TestPluginArguments(JUnitTestPlugin.NAME, new TestGroupConfig(), Collections.<String>emptyList(),
-            Collections.<String>emptyList());
+    return new TestPluginArguments(JUnitTestPlugin.NAME, new TestGroupConfig(), Collections.emptyList(),
+            Collections.emptyList());
   }
 
   public TestPluginArguments withTestPlugin(String plugin) {

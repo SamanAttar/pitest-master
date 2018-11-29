@@ -60,7 +60,7 @@ public class ParameterisedJUnitTestFinder implements TestUnitFinder {
 
   private Function<Description, TestUnit> parameterizedToTestUnit(final Class<?> clazz) {
     return a -> new AdaptedJUnitTestUnit(clazz,
-        Optional.<Filter> ofNullable(new ParameterisedTestFilter(a.toString())));
+        Optional.ofNullable(new ParameterisedTestFilter(a.toString())));
   }
 
   private boolean isParameterizedTest(final Runner runner) {

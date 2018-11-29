@@ -16,7 +16,7 @@ public enum OBBNMutator implements MethodMutatorFactory {
     public MethodVisitor create(final MutationContext context,
                                 final MethodInfo methodInfo,
                                 final MethodVisitor methodVisitor) {
-        return new OBBNMethodVisitor1(this, methodInfo, context, methodVisitor);
+        return new OBBNMethodVisitor(this, methodInfo, context, methodVisitor);
     }
 
     public String getGloballyUniqueId() {
@@ -29,9 +29,9 @@ public enum OBBNMutator implements MethodMutatorFactory {
 
 }
 
-class OBBNMethodVisitor1 extends AbstractInsnMutator {
+class OBBNMethodVisitor extends AbstractInsnMutator {
 
-    OBBNMethodVisitor1(final MethodMutatorFactory factory,
+    OBBNMethodVisitor(final MethodMutatorFactory factory,
                        final MethodInfo methodInfo,
                        final MutationContext context,
                        final MethodVisitor writer) {

@@ -70,7 +70,7 @@ abstract class AbstractPitAggregationReportMojo extends PitReportMojo {
 
   private void addProjectFiles(
       final ReportAggregator.Builder reportAggregationBuilder,
-      final MavenProject proj) throws IOException, Exception {
+      final MavenProject proj) throws Exception {
     final File projectBaseDir = proj.getBasedir();
     List<File> files = getProjectFilesByFilter(projectBaseDir,
         MUTATION_RESULT_FILTER);

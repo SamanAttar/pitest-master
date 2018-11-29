@@ -250,7 +250,7 @@ public class ArgumentPropagationMutatorTest extends MutatorTestBase {
   private static class HasListMethod implements Callable<List<String>> {
 
     public List<String> delegate(final List<Integer> is) {
-      return Arrays.asList(new String[] { "foo", "bar" });
+      return Arrays.asList("foo", "bar");
     }
 
     @Override

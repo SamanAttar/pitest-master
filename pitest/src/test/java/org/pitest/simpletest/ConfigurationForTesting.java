@@ -39,10 +39,10 @@ public class ConfigurationForTesting implements Configuration {
     final List<InstantiationStrategy> instantiationStrategies =
 
         Arrays
-        .<InstantiationStrategy> asList(new NoArgsConstructorInstantiationStrategy());
+        .asList(new NoArgsConstructorInstantiationStrategy());
 
     return new CompoundTestUnitFinder(
-        Collections.<TestUnitFinder> singletonList(new BasicTestUnitFinder(
+        Collections.singletonList(new BasicTestUnitFinder(
             instantiationStrategies, new TestFinder())));
   }
 

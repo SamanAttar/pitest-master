@@ -59,7 +59,7 @@ public class CoverageTransformerTest {
   public void shouldNotTransformClassesNotMatchingPredicate()
       throws IllegalClassFormatException {
     final CoverageTransformer testee = new CoverageTransformer(
-        False.<String> instance());
+        False.instance());
     assertNull(testee.transform(null, "anything", null, null, null));
   }
 

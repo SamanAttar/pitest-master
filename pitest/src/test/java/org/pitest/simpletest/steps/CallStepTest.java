@@ -24,6 +24,6 @@ public class CallStepTest {
 
   public void testMethod() {
 
-  };
+  }
 
 }

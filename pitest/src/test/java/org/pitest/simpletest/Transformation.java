@@ -17,6 +17,6 @@ package org.pitest.simpletest;
 
 public interface Transformation {
 
-  public byte[] transform(String name, byte[] bytes);
+  byte[] transform(String name, byte[] bytes);
 
 }

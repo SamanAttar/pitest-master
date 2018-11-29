@@ -7,12 +7,8 @@ public class FailsTestWhenEnvVariableSetTestee {
     int j = i << 2;
     j = j + i;
 
-    if (!"true".equals(System
-        .getProperty(FailsTestWhenEnvVariableSetTestee.class.getName()))) {
-      return true;
-    } else {
-      return false;
-    }
+      return !"true".equals(System
+              .getProperty(FailsTestWhenEnvVariableSetTestee.class.getName()));
   }
 
 }

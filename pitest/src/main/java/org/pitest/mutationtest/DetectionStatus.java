@@ -101,4 +101,4 @@ public enum DetectionStatus {
     return this.detected;
   }
 
-};
+}

@@ -278,6 +278,9 @@
                   <mutator>ROR_MUTATOR5</mutator>
                   <mutator>AOR_MUTATOR</mutator>
                   <mutator>AOD_MUTATOR</mutator>
+                  <mutator>UOI_MUTATOR</mutator>
+                  <mutator>ABS_MUTATOR</mutator>
+                  <mutator>OBBN_MUTATOR</mutator>
               </mutators>
           </configuration>
       </plugin>

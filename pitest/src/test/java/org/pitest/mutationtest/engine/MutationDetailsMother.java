@@ -55,7 +55,7 @@ public class MutationDetailsMother {
     return QB.builder(MutationDetailsBuilder.class, seed()).withBlock(0)
         .withDescription("A mutation").withFilename("foo.java")
         .withId(aMutationId()).withLineNumber(42).withIsInFinallyBlock(false)
-        .withPoison(PoisonStatus.NORMAL).withTestsInOrder(Collections.<TestInfo> emptyList());
+        .withPoison(PoisonStatus.NORMAL).withTestsInOrder(Collections.emptyList());
   }
 
   private static Generator<MutationDetailsBuilder, MutationDetails> seed() {

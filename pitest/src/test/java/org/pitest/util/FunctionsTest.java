@@ -38,11 +38,11 @@ public class FunctionsTest {
     assertFalse(Functions.startsWith("foo").test("barfoo"));
   }
 
-  static enum Foo {
-    A, B, C, Bar;
-  };
+  enum Foo {
+    A, B, C, Bar
+  }
 
-  @Test
+    @Test
   public void stringToEnumShouldConvertStringsToEnumValues() {
     assertEquals(Foo.A, Functions.stringToEnum(Foo.class).apply("A"));
     assertEquals(Foo.Bar, Functions.stringToEnum(Foo.class).apply("Bar"));

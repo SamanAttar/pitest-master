@@ -43,7 +43,7 @@ public class TestMethod {
   }
 
   public Optional<Class<? extends Throwable>> getExpected() {
-    return Optional.<Class<? extends Throwable>> ofNullable(this.expected);
+    return Optional.ofNullable(this.expected);
   }
 
   @Override

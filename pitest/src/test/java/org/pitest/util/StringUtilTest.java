@@ -25,7 +25,7 @@ public class StringUtilTest {
 
   @Test
   public void shouldCreateEmptyStringWhenJoiningEmptyList() {
-    assertEquals("", StringUtil.join(Collections.<String> emptyList(), ","));
+    assertEquals("", StringUtil.join(Collections.emptyList(), ","));
   }
 
   @Test

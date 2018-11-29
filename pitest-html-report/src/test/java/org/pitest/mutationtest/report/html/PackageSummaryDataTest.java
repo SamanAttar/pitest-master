@@ -35,8 +35,8 @@ public class PackageSummaryDataTest {
 
   private MutationTestSummaryData makeSummaryData(final String fileName) {
     return new MutationTestSummaryData(fileName,
-        Collections.<MutationResult> emptyList(),
-        Collections.<String> emptyList(), Collections.<ClassInfo> emptyList(),
+        Collections.emptyList(),
+        Collections.emptyList(), Collections.emptyList(),
         0);
   }
 

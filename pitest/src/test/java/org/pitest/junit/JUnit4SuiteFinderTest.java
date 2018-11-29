@@ -53,7 +53,7 @@ public class JUnit4SuiteFinderTest {
   @Test
   public void shouldReturnTestClassForEachClassInSuiteClassesAnnotationWhenRunnerIsSuite() {
     final Class<?> annotated = HideFromJUnit.AnnotatedJUnit.class;
-    final Collection<Class<?>> expected = Arrays.<Class<?>> asList(
+    final Collection<Class<?>> expected = Arrays.asList(
         String.class, Integer.class);
     assertEquals(expected, this.testee.apply(annotated));
   }

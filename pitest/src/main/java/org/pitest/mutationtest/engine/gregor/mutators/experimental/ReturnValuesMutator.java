@@ -56,7 +56,7 @@ public class ReturnValuesMutator implements MethodMutatorFactory {
       final Type objectType = Type.getType(Object.class);
       final Type classType = Type.getType(Class.class);
       this.mutationMethodDescriptor = Type.getMethodDescriptor(objectType,
-          new Type[] { objectType, classType });
+              objectType, classType);
     }
 
     public String getClassName() {

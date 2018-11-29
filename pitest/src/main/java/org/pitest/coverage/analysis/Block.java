@@ -38,10 +38,7 @@ public final class Block {
     if (this.firstInstruction != other.firstInstruction) {
       return false;
     }
-    if (this.lastInstruction != other.lastInstruction) {
-      return false;
-    }
-    return true;
+      return this.lastInstruction == other.lastInstruction;
   }
 
   @Override

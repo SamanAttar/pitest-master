@@ -37,14 +37,15 @@ class ABSMethodVisitor extends MethodVisitor {
                      final MutationContext context,
                      final MethodVisitor delegateMethodVisitor) {
 
+        //call parent constructor with ASM6 library and the method visitor
         super(Opcodes.ASM6, delegateMethodVisitor);
         this.factory = factory;
         this.context = context;
     }
 
+    // Allows us to uniquely identify a mutation
     private MutationIdentifier createMutationIdentifier(String message, int var){
-        final MutationIdentifier newId = this.context.registerMutation(this.factory, message + var);
-        return newId;
+        return this.context.registerMutation(this.factory, message + var);
     }
 
     @Override
@@ -54,6 +55,7 @@ class ABSMethodVisitor extends MethodVisitor {
 
         if (opcode == Opcodes.ILOAD ) {
             MutationIdentifier newId = createMutationIdentifier("Negate Integer Variable: ", var);
+            //insert the new instruction id into bytecode
             if (this.context.shouldMutate(newId)) {
                 super.visitInsn(Opcodes.INEG);
             }

@@ -137,10 +137,7 @@ public final class MutationStatusTestPair implements Serializable {
     if (this.numberOfTestsRun != other.numberOfTestsRun) {
       return false;
     }
-    if (this.status != other.status) {
-      return false;
-    }
-    return true;
+      return this.status == other.status;
   }
 
 }

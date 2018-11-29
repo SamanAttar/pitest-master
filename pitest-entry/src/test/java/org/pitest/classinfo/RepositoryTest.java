@@ -65,7 +65,7 @@ public class RepositoryTest {
   @Test
   public void shouldOnlyCheckSourceForUnknownClassesOnce() {
     this.testee = new Repository(this.source);
-    when(this.source.getBytes(anyString())).thenReturn(Optional.<byte[]> empty());
+    when(this.source.getBytes(anyString())).thenReturn(Optional.empty());
     this.testee.hasClass(ClassName.fromString("foo"));
     this.testee.hasClass(ClassName.fromString("foo"));
     verify(this.source, times(1)).getBytes("foo");
@@ -80,7 +80,7 @@ public class RepositoryTest {
   @Test
   public void shouldOnlyLookForUnknownClassesOnce() {
     this.testee = new Repository(this.source);
-    when(this.source.getBytes(anyString())).thenReturn(Optional.<byte[]> empty());
+    when(this.source.getBytes(anyString())).thenReturn(Optional.empty());
     this.testee.fetchClass(ClassName.fromString("foo"));
     this.testee.fetchClass(ClassName.fromString("foo"));
     verify(this.source, times(1)).getBytes("foo");
@@ -89,7 +89,7 @@ public class RepositoryTest {
   @Test
   public void shouldOnlyQuerySourceForAnUnknownClassOnce() {
     this.testee = new Repository(this.source);
-    when(this.source.getBytes(anyString())).thenReturn(Optional.<byte[]> empty());
+    when(this.source.getBytes(anyString())).thenReturn(Optional.empty());
     this.testee.hasClass(ClassName.fromString("foo"));
     this.testee.fetchClass(ClassName.fromString("foo"));
     verify(this.source, times(1)).getBytes("foo");
@@ -240,7 +240,7 @@ public class RepositoryTest {
     assertTrue(aClass.get().hasAnnotation(Test.class));
   }
 
-  static interface ITop {
+  interface ITop {
 
   }
 

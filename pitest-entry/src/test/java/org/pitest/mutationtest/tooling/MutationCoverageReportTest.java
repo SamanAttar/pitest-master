@@ -105,10 +105,10 @@ public class MutationCoverageReportTest {
   public void setUp() {
     MockitoAnnotations.initMocks(this);
     this.data = new ReportOptions();
-    this.data.setSourceDirs(Collections.<File> emptyList());
+    this.data.setSourceDirs(Collections.emptyList());
     when(this.coverage.calculateCoverage()).thenReturn(this.coverageDb);
     when(
-        this.listenerFactory.getListener(Matchers.<Properties> any(),
+        this.listenerFactory.getListener(Matchers.any(),
             any(ListenerArguments.class))).thenReturn(this.listener);
     mockMutationEngine();
   }
