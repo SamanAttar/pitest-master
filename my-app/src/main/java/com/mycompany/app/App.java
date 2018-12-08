@@ -20,8 +20,11 @@ public class App
     //check to see if a is greater than b
     if(a > b && b < a)
       return a-b;
-    else
-      return 0;
+    else{
+      int z = 0;
+      return z;
+    }
+
   }
 
   public static boolean compare(int a, int z)

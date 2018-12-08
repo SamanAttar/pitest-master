@@ -31,10 +31,11 @@
                     <mutator>ROR_MUTATOR2</mutator>
                     <mutator>ROR_MUTATOR3</mutator>
                     <mutator>ROR_MUTATOR4</mutator>
-                    <mutator>ROR_MUTATOR5</mutator> -->
+                    <mutator>ROR_MUTATOR5</mutator>
                     <mutator>UOI_MUTATOR</mutator>
                     <mutator>ABS_MUTATOR</mutator>
-                    <mutator>OBBN_MUTATOR</mutator>
+                    <mutator>OBBN_MUTATOR</mutator> -->
+                    <mutator>REPLACE_VARIABLE_BY_TYPE_MUTATOR</mutator>
                   <!--  DO something like this: <mutator>AOR_Calls</mutator> -->
                 </mutators>
               </configuration>

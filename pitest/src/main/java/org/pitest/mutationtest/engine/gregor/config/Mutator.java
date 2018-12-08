@@ -130,6 +130,9 @@ public final class Mutator {
     add("ABS_MUTATOR", ABSMutator.ABS_MUTATOR);
 
     add("UOI_MUTATOR", UOIMutator.UOI_MUTATOR);
+    add("REPLACE_VARIABLE_BY_TYPE_MUTATOR", ReplaceVariableByTypeMutator.REPLACE_VARIABLE_BY_TYPE_MUTATOR);
+    add("REMOVE_METHOD_ARGS", RemoveMethodArgs.REMOVE_METHOD_ARGS);
+
 
     /**
      * Removes conditional statements so that guarded statements always execute
@@ -228,6 +231,8 @@ public final class Mutator {
             OBBNMutator.OBBN_MUTATOR,
             ABSMutator.ABS_MUTATOR,
             UOIMutator.UOI_MUTATOR,
+            ReplaceVariableByTypeMutator.REPLACE_VARIABLE_BY_TYPE_MUTATOR,
+            RemoveMethodArgs.REMOVE_METHOD_ARGS,
             IncrementsMutator.INCREMENTS_MUTATOR);
   }
 
@@ -250,7 +255,9 @@ public final class Mutator {
             AODMutator.AOD_MUTATOR,
             OBBNMutator.OBBN_MUTATOR,
             ABSMutator.ABS_MUTATOR,
-            UOIMutator.UOI_MUTATOR),
+            UOIMutator.UOI_MUTATOR,
+            ReplaceVariableByTypeMutator.REPLACE_VARIABLE_BY_TYPE_MUTATOR,
+            RemoveMethodArgs.REMOVE_METHOD_ARGS),
             betterReturns());
   }
 
