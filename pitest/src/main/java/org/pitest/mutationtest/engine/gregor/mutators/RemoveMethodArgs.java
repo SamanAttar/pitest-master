@@ -49,7 +49,7 @@ class RemoveMethodArgsVisitor extends MethodVisitor {
     public void visitMethodInsn(final int opcode, final String methodName, final String methodParameters, final String description, final boolean isInterface) {
 
         //check for more than 2 parameters
-        // desc example -> DILjava/lang/String;
+        // description example -> DILjava/lang/String;
         if (getArgumentTypes(description).length > 2) {
             final MutationIdentifier newId = this.context.registerMutation(this.factory, "Removed parameters from: " + methodName + " method.");
             Type[] methodParameterArray = getArgumentTypes(description);
